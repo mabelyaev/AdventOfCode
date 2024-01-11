@@ -40,7 +40,7 @@ data class GroupRucksack(val rucksacks: List<Rucksack>) {
 
 class Day03Of2022Tests {
     @Test
-    fun example1() {
+    fun part1Example() {
         val rucksacks = readRucksacks(AdventCase.Example)
         assertEquals(6, rucksacks.size)
         assertEquals("vJrwpWtwJgWr", rucksacks.first().firstCompartment)
@@ -52,20 +52,20 @@ class Day03Of2022Tests {
     }
 
     @Test
-    fun task1() {
+    fun part1Task() {
         val rucksacks = readRucksacks(AdventCase.Task)
         assertEquals(8153, rucksacks.sumOf { it.shareItems().map { it.priority() }.sum() })
     }
 
     @Test
-    fun handShapeScopesExample2() {
+    fun part2Example() {
         val rucksacks = readRucksacks(AdventCase.Example)
         val groups = rucksacks.chunked(3).map { GroupRucksack(it) }
         assertEquals(70, groups.sumOf { it.badge().priority() })
     }
 
     @Test
-    fun handShapeScopes2() {
+    fun part2Task() {
         val rucksacks = readRucksacks(AdventCase.Task)
         val groups = rucksacks.chunked(3).map { GroupRucksack(it) }
         assertEquals(2342, groups.sumOf { it.badge().priority() })

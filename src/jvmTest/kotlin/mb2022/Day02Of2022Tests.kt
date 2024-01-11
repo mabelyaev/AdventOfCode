@@ -92,25 +92,25 @@ fun List<HandShapeRound>.calcSantaScore2(): Int {
 class Day02Of2022Tests {
 
     @Test
-    fun example1() {
+    fun part1Example() {
         val rounds = readShapeCommands(AdventCase.Example)
         assertEquals(15, rounds.calcSantaScore1())
     }
 
     @Test
-    fun task1() {
+    fun part1Task() {
         val rounds = readShapeCommands(AdventCase.Task)
         assertEquals(14264, rounds.calcSantaScore1())
     }
 
     @Test
-    fun handShapeScopesExample2() {
+    fun part2Example() {
         val rounds = readShapeCommands(AdventCase.Example)
         assertEquals(12, rounds.calcSantaScore2())
     }
 
     @Test
-    fun handShapeScopes2() {
+    fun part2Task() {
         val rounds = readShapeCommands(AdventCase.Task)
         assertEquals(12382, rounds.calcSantaScore2())
     }

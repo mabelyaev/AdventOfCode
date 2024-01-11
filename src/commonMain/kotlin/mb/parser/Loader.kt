@@ -10,6 +10,15 @@ fun <R> AdventDay.from2020By(
     return transformLines(AdventYear.Year2020, this, part, case, order, transform)
 }
 
+fun <R> AdventDay.parts2020By(
+    case: AdventCase,
+    part: AdventPart,
+    order: AdventOrder,
+    transform: (List<String>) -> R
+): List<R> {
+    return parts(AdventYear.Year2020, this, part, case, order, transform)
+}
+
 fun <R> AdventDay.from2021By(
     case: AdventCase,
     part: AdventPart,
@@ -17,6 +26,15 @@ fun <R> AdventDay.from2021By(
     transform: (index: Int, String) -> R
 ): List<R> {
     return transformLines(AdventYear.Year2021, this, part, case, order, transform)
+}
+
+fun <R> AdventDay.parts2021By(
+    case: AdventCase,
+    part: AdventPart,
+    order: AdventOrder,
+    transform: (List<String>) -> R
+): List<R> {
+    return parts(AdventYear.Year2021, this, part, case, order, transform)
 }
 
 fun <R> AdventDay.from2022By(
