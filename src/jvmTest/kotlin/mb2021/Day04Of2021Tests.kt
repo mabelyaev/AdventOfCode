@@ -124,7 +124,7 @@ class Day04Of2021Tests {
 
     private fun readEntries(case: AdventCase): Pair<List<Int>, List<BingoCard>> {
         val orderOfNumbers = mutableListOf<Int>()
-        val cards = AdventDay.Day04.parts2021By(case, AdventPart.Part1, AdventOrder.Order1) { lines ->
+        val cards = AdventDay.Day04.parts2021By(case, AdventPart.Part1, AdventOrder.Order1, true) { lines ->
             if (lines.size == 1) {
                 lines.first().split(",").forEach {
                     orderOfNumbers.add(it.toInt())

@@ -14,9 +14,10 @@ fun <R> AdventDay.parts2020By(
     case: AdventCase,
     part: AdventPart,
     order: AdventOrder,
+    needTrim: Boolean,
     transform: (List<String>) -> R
 ): List<R> {
-    return parts(AdventYear.Year2020, this, part, case, order, transform)
+    return parts(AdventYear.Year2020, this, part, case, order, needTrim, transform)
 }
 
 fun <R> AdventDay.from2021By(
@@ -32,9 +33,10 @@ fun <R> AdventDay.parts2021By(
     case: AdventCase,
     part: AdventPart,
     order: AdventOrder,
+    needTrim: Boolean,
     transform: (List<String>) -> R
 ): List<R> {
-    return parts(AdventYear.Year2021, this, part, case, order, transform)
+    return parts(AdventYear.Year2021, this, part, case, order, needTrim, transform)
 }
 
 fun <R> AdventDay.from2022By(
@@ -50,9 +52,10 @@ fun <R> AdventDay.parts2022By(
     case: AdventCase,
     part: AdventPart,
     order: AdventOrder,
+    needTrim: Boolean,
     transform: (List<String>) -> R
 ): List<R> {
-    return parts(AdventYear.Year2022, this, part, case, order, transform)
+    return parts(AdventYear.Year2022, this, part, case, order, needTrim, transform)
 }
 
 
@@ -74,6 +77,16 @@ fun AdventDay.groupFrom2023By(
     return makeGroup(AdventYear.Year2023, this, part, case, order, *counts)
 }
 
+fun <R> AdventDay.parts2023By(
+    case: AdventCase,
+    part: AdventPart,
+    order: AdventOrder,
+    needTrim: Boolean,
+    transform: (List<String>) -> R
+): List<R> {
+    return parts(AdventYear.Year2023, this, part, case, order, needTrim, transform)
+}
+
 expect fun <R> transformLines(
     year: AdventYear,
     day: AdventDay,
@@ -89,6 +102,7 @@ expect fun <R> parts(
     part: AdventPart,
     case: AdventCase,
     order: AdventOrder,
+    needTrim: Boolean,
     transform: (List<String>) -> R): List<R>
 
 

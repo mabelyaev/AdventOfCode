@@ -28,6 +28,7 @@ actual fun <R> parts(
     part: AdventPart,
     case: AdventCase,
     order: AdventOrder,
+    needTrim: Boolean,
     transform: (List<String>) -> R
 ): List<R> {
     TODO("Not yet implemented")

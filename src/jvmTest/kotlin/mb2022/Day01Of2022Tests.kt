@@ -39,7 +39,7 @@ class Day01Of2022Tests {
 
     private fun readPacks(case: AdventCase): List<PackOfElve> {
         var groupNumber = 1
-        var rounds = AdventDay.Day01.parts2022By(case, AdventPart.Part1, AdventOrder.Order1) { s ->
+        var rounds = AdventDay.Day01.parts2022By(case, AdventPart.Part1, AdventOrder.Order1, true) { s ->
             PackOfElve(groupNumber++, s.map { it.toInt() })
         }
         return rounds

@@ -143,7 +143,7 @@ class Day04Of2020Tests {
     }
 
     private fun readEntries(case: AdventCase, order: AdventOrder = AdventOrder.Order1): List<Passport> =
-        AdventDay.Day04.parts2020By(case, AdventPart.Part1, order) { lines ->
+        AdventDay.Day04.parts2020By(case, AdventPart.Part1, order, true) { lines ->
             val fields = lines.map {
                 it.split(" ").map {
                     val (code, value) = it.split(":")

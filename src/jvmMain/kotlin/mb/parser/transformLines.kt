@@ -19,15 +19,16 @@ actual fun <R> parts(
     part: AdventPart,
     case: AdventCase,
     order: AdventOrder,
+    needTrim: Boolean,
     transform: (List<String>) -> R): List<R> = buildList {
     var lines = reader(year, day, part, case, order).readLines()
     var groupOfStrings = ArrayList<String>()
 
 
     lines.forEach { s ->
-        val notEmptyLine = s.trim().takeIf { it.isNotBlank() }
-        if (notEmptyLine != null) {
-            groupOfStrings.add(notEmptyLine)
+        val line = (if (needTrim) s.trim() else s).takeIf { it.isNotBlank() }
+        if (line != null) {
+            groupOfStrings.add(line)
         } else {
             add(transform(groupOfStrings))
             groupOfStrings = ArrayList<String>()
